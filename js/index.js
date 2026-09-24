@@ -22,79 +22,79 @@ const PRODUTOS_BASE = [
     id: 1, nome: 'Porta-Canetas de Resina', categoria: 'resina',
     descricao: 'Porta-canetas artesanal em resina epóxi, brilho cristalino e bordas lisas. Perfeito para mesa de estudos ou presente.',
     preco: 49.90, tags: ['Feito à mão', 'Brilho cristal'],
-    emoji: '🖌️'
+    emoji: '🖌️', imagem: 'img/produtos/produto1.jpg'
   },
   {
     id: 2, nome: 'Chaveiro Flor de Resina', categoria: 'resina',
     descricao: 'Chaveiro delicado com flor preservada dentro da resina. Disponível em rosa, lilás e branco.',
     preco: 19.90, tags: ['Flor preservada', 'Macio ao toque'],
-    emoji: '🌸'
+    emoji: '🌸', imagem: 'img/produtos/produto2.jpg'
   },
   {
     id: 3, nome: 'Base Quadrada de Resina', categoria: 'resina',
     descricao: 'Bandeja/base decorativa em resina com pigmentos terrosos. Ideal para enfeitar mesas e prateleiras.',
     preco: 35.00, tags: ['Pigmento artesanal', 'Lavável'],
-    emoji: '🧪'
+    emoji: '🧪', imagem: 'img/produtos/produto3.jpg'
   },
   {
     id: 4, nome: 'Caderno Domino Decorado', categoria: 'domino',
     descricao: 'Caderno Domino 1 matéria capa dura personalizada com detalhe em resina e furação artesanal.',
     preco: 59.90, tags: ['Capa dura', '1 matéria'],
-    emoji: '📓'
+    emoji: '📓', imagem: 'img/produtos/produto4.jpg'
   },
   {
     id: 5, nome: 'Caderno Domino Planner', categoria: 'domino',
     descricao: 'Planner Domino com marcadores coloridos, capa personalizada e acabamento reforçado com resina.',
     preco: 74.90, tags: ['Planner anual', 'Marcadores inclusos'],
-    emoji: '📅'
+    emoji: '📅', imagem: 'img/produtos/produto5.jpg'
   },
   {
     id: 6, nome: 'Kit Cadernos Domino 2x', categoria: 'domino',
     descricao: 'Kit com dois cadernos Domino personalizados (escolha as cores na mesa). Excelente para presente.',
     preco: 109.00, tags: ['Kit presente', '2 unidades'],
-    oldPreco: 129.00, emoji: '📚'
+    oldPreco: 129.00, emoji: '📚', imagem: 'img/produtos/produto6.jpg'
   },
   {
     id: 7, nome: 'Marcador de Página Resinado', categoria: 'canetas',
     descricao: 'Marcador de página de acrílico com detalhe em resina metálica. Não desbota e não amassa.',
     preco: 12.50, tags: ['Metálico', 'Resistente'],
-    emoji: '🔖'
+    emoji: '🔖', imagem: 'img/produtos/produto7.jpg'
   },
   {
     id: 8, nome: 'Caneta Gel Personalizada', categoria: 'canetas',
     descricao: 'Caneta gel com acabamento em resina na cor de sua escolha. Nome gravado sob encomenda.',
     preco: 9.90, tags: ['Nome gravado', 'Acabamento resina'],
-    emoji: '🖊️'
+    emoji: '🖊️', imagem: 'img/produtos/produto8.jpg'
   },
   {
     id: 9, nome: 'Pincel de Decoração', categoria: 'canetas',
     descricao: 'Kit com 3 pincéis de decoração para scrapbook e lettering, com cabo resinado.',
     preco: 27.90, tags: ['Kit 3x', 'Lettering'],
-    emoji: '🖍️'
+    emoji: '🖍️', imagem: 'img/produtos/produto9.jpg'
   },
   {
     id: 10, nome: 'Organizador de Mesa', categoria: 'acessorios',
     descricao: 'Organizador de mesa em acrílico com detalhes de resina. Deixa tudo no lugar com estilo.',
     preco: 44.90, tags: ['Acrílico', '4 compartimentos'],
-    emoji: '🗄️'
+    emoji: '🗄️', imagem: 'img/produtos/produto10.jpg'
   },
   {
     id: 11, nome: 'Luminária de Resina com Flores', categoria: 'acessorios',
     descricao: 'Base luminosa em resina com flores preservadas. Luz quente e ambiente aconchegante.',
     preco: 89.90, tags: ['Flores preservadas', 'Luz quente'],
-    emoji: '🪔'
+    emoji: '🪔', imagem: 'img/produtos/produto11.jpg'
   },
   {
     id: 12, nome: 'Porta-Retrato Personalizado', categoria: 'personalizados',
     descricao: 'Porta-retrato decorado com resina, nome e cores à sua escolha. Edição única para presentear.',
     preco: 42.00, tags: ['Sob encomenda', 'Nome gravado'],
-    oldPreco: 52.00, emoji: '🖼️'
+    oldPreco: 52.00, emoji: '🖼️', imagem: 'img/produtos/produto12.jpg'
   },
   {
     id: 13, nome: 'Caixa de Memórias em Resina', categoria: 'personalizados',
     descricao: 'Caixa personalizada para guardar memórias (fotos, bilhetes, lembranças) com tampa resinada.',
     preco: 79.00, tags: ['Sob encomenda', 'Tampa resinada'],
-    emoji: '📦'
+    emoji: '📦', imagem: 'img/produtos/produto13.jpg'
   }
 ];
 
@@ -102,9 +102,9 @@ let categoriaAtiva = 'todos';
 let produtos = [];
 
 function carregar() {
-  const data = localStorage.getItem('encanto_resina_produtos');
+  const data = localStorage.getItem('encanto_resina_produtos_fotos');
   produtos = data ? JSON.parse(data) : PRODUTOS_BASE;
-  localStorage.setItem('encanto_resina_produtos', JSON.stringify(produtos));
+  localStorage.setItem('encanto_resina_produtos_fotos', JSON.stringify(produtos));
 }
 
 function escapar(texto) {
@@ -145,6 +145,7 @@ function render() {
     <div class="card" style="animation-delay:${Math.min(i * 60, 600)}ms" onclick="abrirModal(${p.id})">
       <div class="card-img" style="background:${corPorId(p.id)}">
         <span class="prod-emoji">${p.emoji}</span>
+        <img class="prod-foto" src="${escapar(p.imagem)}" alt="${escapar(p.nome)}" loading="lazy" onerror="this.remove()">
         ${p.oldPreco ? '<span class="card-sale">OFERTA</span>' : ''}
       </div>
       <div class="card-body">
@@ -164,7 +165,9 @@ function abrirModal(id) {
   const p = produtos.find(x => x.id === id);
   if (!p) return;
 
-  document.getElementById('modalImg').innerHTML = '<span class="prod-emoji">' + p.emoji + '</span>';
+  document.getElementById('modalImg').innerHTML =
+    '<span class="prod-emoji">' + p.emoji + '</span>' +
+    '<img class="prod-foto" src="' + escapar(p.imagem) + '" alt="' + escapar(p.nome) + '" onerror="this.remove()">';
   document.getElementById('modalImg').style.background = corPorId(p.id);
   document.getElementById('modalTitulo').textContent = p.nome;
   document.getElementById('modalCat').textContent = CATEGORIAS[p.categoria] || '';

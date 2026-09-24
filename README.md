@@ -30,7 +30,11 @@ Altere as variáveis em `:root` no `css/style.css` (papel, café espresso, doura
 
 ### Produtos
 
-Edite o array `PRODUTOS_BASE` no `js/index.js`. Cada produto tem: id, nome, categoria, descricao, preco, tags, emoji e opcionalmente `oldPreco` (para exibir preço riscado de oferta).
+Edite o array `PRODUTOS_BASE` no `js/index.js`. Cada produto tem: id, nome, categoria, descricao, preco, tags, emoji, `imagem` e opcionalmente `oldPreco` (para exibir preço riscado de oferta).
+
+### Fotos dos produtos
+
+As fotos ilustrativas ficam em `html/img/produtos/produto1.jpg` ... `produto13.jpg` (mesmo número do `id`). Para usar suas próprias fotos, sobrescreva os arquivos com o mesmo nome — o emoji aparece automaticamente como fallback se a foto não carregar.
 
 ### Fotos de fundo
 
