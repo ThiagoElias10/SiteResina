@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encanto em Resina — Catálogo</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="logo">
+      <span class="logo-dot"></span>
+      <h1>Encanto em Resina <span class="beta">BETA</span></h1>
+    </div>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Buscar produtos...">
+    </div>
+  </div>
+</header>
+
+<nav class="categorias" id="catBar">
+  <button class="cat active" data-cat="todos">Todos</button>
+  <button class="cat" data-cat="resina">Resina</button>
+  <button class="cat" data-cat="domino">Cadernos Domino</button>
+  <button class="cat" data-cat="canetas">Canetas e Marcadores</button>
+  <button class="cat" data-cat="acessorios">Acessórios</button>
+  <button class="cat" data-cat="personalizados">Personalizados</button>
+</nav>
+
+<main class="container">
+  <p class="result-count" id="resultCount"></p>
+  <section class="grid" id="grid"></section>
+  <div class="vazio" id="emptyState" style="display:none">
+    <div class="icon">&#128269;</div>
+    <p>Nenhum produto encontrado.</p>
+  </div>
+</main>
+
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <button class="modal-close" id="modalClose">&times;</button>
+    <div class="modal-img" id="modalImg">&#127912;</div>
+    <h2 id="modalTitulo"></h2>
+    <p class="modal-cat" id="modalCat"></p>
+    <p class="modal-desc" id="modalDesc"></p>
+    <p class="modal-price" id="modalPrice"></p>
+    <div class="modal-tags" id="modalTags"></div>
+    <a class="whats-btn" id="whatsBtn" target="_blank" rel="noopener">
+      Pedir pelo WhatsApp
+    </a>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="autor">
+    <img src="img/autora.jpg" alt="Autora das artes"
+      onerror="this.src='https://placehold.co/200x200/f8f6f3/a9714b?text=Autora';">
+    <div class="autor-info">
+      <p class="autor-nome">[Nome da autora]</p>
+      <p class="autor-bio">[Escreva aqui uma frase sobre a artista — um hobby, inspiração, redes sociais...]</p>
+    </div>
+  </div>
+  <p class="footer-txt">Catálogo beta &mdash; resina &bull; cadernos Domino &bull; canetas &amp; acessórios</p>
+</footer>
+
+<script src="../js/index.js"></script>
+</body>
+</html>
