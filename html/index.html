@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Encanto em Resina — Catálogo</title>
-<link rel="stylesheet" href="../css/style.css">
+    <meta name="description" content="Encanto em Resina - produtos artesanais em resina e cadernos Domino personalizados.">
+    <title>Encanto em Resina — Catálogo</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
@@ -12,10 +13,10 @@
   <div class="topbar-inner">
     <div class="logo">
       <span class="logo-dot"></span>
-      <h1>Encanto em Resina <span class="beta">BETA</span></h1>
+      <h1>Encanto em Resina</h1>
     </div>
     <div class="search-box">
-      <input type="text" id="searchInput" placeholder="Buscar produtos...">
+      <input type="text" id="searchInput" placeholder="Buscar produtos..." autocomplete="off">
     </div>
   </div>
 </header>
@@ -38,12 +39,12 @@
   </div>
 </main>
 
-<div class="modal-overlay" id="modal">
+<div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitulo">
   <div class="modal">
-    <button class="modal-close" id="modalClose">&times;</button>
-    <div class="modal-img" id="modalImg">&#127912;</div>
-    <h2 id="modalTitulo"></h2>
+    <button class="modal-close" id="modalClose" aria-label="Fechar">&times;</button>
+    <div class="modal-img" id="modalImg"></div>
     <p class="modal-cat" id="modalCat"></p>
+    <h2 id="modalTitulo"></h2>
     <p class="modal-desc" id="modalDesc"></p>
     <p class="modal-price" id="modalPrice"></p>
     <div class="modal-tags" id="modalTags"></div>
@@ -59,10 +60,10 @@
       onerror="this.src='https://placehold.co/200x200/f8f6f3/a9714b?text=Autora';">
     <div class="autor-info">
       <p class="autor-nome">[Nome da autora]</p>
-      <p class="autor-bio">[Escreva aqui uma frase sobre a artista — um hobby, inspiração, redes sociais...]</p>
+      <p class="autor-bio">[Escreva aqui uma frase sobre a artista - um hobby, inspiração, redes sociais...]</p>
     </div>
   </div>
-  <p class="footer-txt">Catálogo beta &mdash; resina &bull; cadernos Domino &bull; canetas &amp; acessórios</p>
+  <p class="footer-txt">Encanto em Resina &mdash; resina &bull; cadernos Domino &bull; canetas &amp; acessórios</p>
 </footer>
 
 <script src="../js/index.js"></script>
